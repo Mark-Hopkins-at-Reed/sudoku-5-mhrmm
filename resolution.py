@@ -19,11 +19,9 @@ def resolve(clause1, clause2):
     
 
 class ClauseQueue:
-    def __init__(self, 
-                 queue = queue.PriorityQueue(), 
-                 priority_function = lambda clause: len(clause)):
-        self.queue = queue
-        self.priority_function = priority_function
+    def __init__(self):
+        self.queue = queue.PriorityQueue()
+        self.priority_function = lambda clause: len(clause)
         self.cached_clauses = set([])
         
     def push(self, clause):
